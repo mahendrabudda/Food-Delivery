@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 
 const app = express()
-const port = 4000
+const port = 3000
 
 //middleware
 app.use(express.json())
