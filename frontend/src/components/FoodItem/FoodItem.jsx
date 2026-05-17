@@ -4,6 +4,7 @@ import { assets } from '../../assets/frontend_assets/assets'
 import { StoreContext } from '../../context/StoreContext'
 
 const FoodItem = ({ id, name, price, description, image }) => {
+  const url = import.meta.env.VITE_BACKEND_URL;
 
   const { cartItems, addToCart, removeFromCart } =
     useContext(StoreContext)
@@ -16,7 +17,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
 
         <img
           className='food-item-image'
-          src={`http://localhost:3000/images/${image}`}
+          src={`${url}/images/${image}`}
           alt={name}
         />
 
