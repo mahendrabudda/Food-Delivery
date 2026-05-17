@@ -1,20 +1,17 @@
 import React from 'react'
+import { Route, Routes, Navigate } from 'react-router-dom'
 
 import Navbar from './components/Navbar/Navbar'
 import Sidebar from './components/Sidebar/Sidebar'
-
-import {
-  Route,
-  Routes,
-  Navigate
-} from 'react-router-dom'
 
 import Add from './pages/Add/Add.jsx'
 import Orders from './pages/Orders/Orders.jsx'
 import List from './pages/List/List.jsx'
 import Login from './components/Login/Login.jsx'
 
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 
 import {
   ToastContainer,

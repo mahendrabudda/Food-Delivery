@@ -7,7 +7,7 @@ import { toast } from 'react-toastify'
 
 const Add = () => {
 
-    const url = "http://localhost:3000";
+    const url = import.meta.env.VITE_BACKEND_URL;
 
     const [image, setImage] = useState(false)
 
