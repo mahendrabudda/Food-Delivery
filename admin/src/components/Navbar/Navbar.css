@@ -1,0 +1,28 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4%;
+    
+}
+.navbar logo{
+    width: max(10% , 80px);
+    
+}
+.navbar profile{
+    width: 40px;
+}
+.navbar-right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logout-btn{
+    padding: 8px 18px;
+    border: none;
+    background-color: tomato;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}

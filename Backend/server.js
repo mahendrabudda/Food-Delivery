@@ -1,17 +1,42 @@
-import express from 'express'
-import cors from 'cors'
+import express from 'express';
+import cors from 'cors';
+import { connectDB } from './config/db.js';
+import foodRouter from "./routes/foodRoute.js";
+import userRouter from './routes/userRoute.js';
+import path from 'path';
+import 'dotenv/config';
 
-const app = express()
-const port = 3000
+const app = express();
+const port = process.env.PORT || 3000;
 
-//middleware
-app.use(express.json())
-app.use(cors())
+// Database connection
+connectDB();
 
-app.get("/" , (req , res)=>{
-    res.send("API WORKING")
-})
+// Middleware
+app.use(express.json());
 
-app.listen(port , ()=>{
-    console.log(`Server Started on http://localhost:${port}`)
-})
+app.use(cors({
+    origin: [
+        'http://localhost:5174',
+        'http://localhost:5173', // frontend
+        'http://localhost:3000'
+    ],
+    credentials: true
+}));
+
+// Serve uploaded images
+app.use('/images', express.static(path.join(process.cwd(), 'uploads')));
+
+// API routes
+app.use("/api/food", foodRouter);
+app.use("/api/user", userRouter);
+
+// Test route
+app.get("/", (req, res) => {
+    res.send("API WORKING");
+});
+
+// Start server
+app.listen(port, () => {
+    console.log(`Server Started on http://localhost:${port}`);
+});
