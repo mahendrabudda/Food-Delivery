@@ -8,7 +8,7 @@ const Login = () => {
 
     const navigate = useNavigate();
 
-    const url = "http://localhost:3000";
+    const url = import.meta.env.VITE_BACKEND_URL;
 
     const [data, setData] = useState({
         email: "",
