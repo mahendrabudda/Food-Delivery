@@ -20,7 +20,7 @@ app.use(cors({
         'http://localhost:5174',
         'http://localhost:5173',
         'http://localhost:3000',
-        'https://food-delivery-pearl-beta.vercel.app'
+        'https://food-delivery-3g3zpkn39-mahendras-projects-22b36856.vercel.app'
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
