@@ -49,9 +49,19 @@ const LoginPopup = ({ setShowLogin }) => {
         alert("⚠️ " + response.data.message);
       }
     } catch (error) {
-      console.error("❌ Error during login/register:", error.message);
-      alert("❌ Something went wrong, please try again.");
-    }
+
+  console.log("FULL ERROR:", error);
+
+  console.log("RESPONSE:", error.response);
+
+  console.log("DATA:", error.response?.data);
+
+  alert(
+    error.response?.data?.message ||
+    error.message ||
+    "Something went wrong"
+  );
+}
   };
 
   return (
